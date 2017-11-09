@@ -164,7 +164,7 @@ var ne = [
 
 ]
 
-var sortbyday = {
+var sortByDay = {
 	"2017-11-09":
 	[
 		{
@@ -202,7 +202,7 @@ var sortbyday = {
 	]
 }
 
-var sortbyproduct = {
+var sortByProduct = {
 	"Pyragas":
 	[
 		{
@@ -212,7 +212,7 @@ var sortbyproduct = {
 	]
 }
 
-var optimizedbydate = {
+var optimizedBydDate = {
 	"2017-11-09":
 	{
 		
@@ -227,7 +227,7 @@ var optimizedbydate = {
 		},
 }
 
-var optimizedbyproduct = {
+var optimizedByProduct = {
 	"Pyragas":
 	{
 		
@@ -243,8 +243,23 @@ var optimizedbyproduct = {
 }
 
 var products={
-	1:"Pyragas"
+	"P-1":"Pyragas"
+	"P-2":"Sausainis"
 }
+var finalByProduct{
+	"P-1":{
+		"2017-11-09":[2, 5, 5, 8, 6],
+		"2017-11-10":[2, 5, 5, 8, 6],
+		"2017-11-11":[2, 5, 5, 8, 6],
+		"2017-11-12":[2, 5, 5, 8, 6],
+		"2017-11-13":[2, 5, 5, 8, 6],
+
+
+	}
+}
+
+
+
 
 
 console.log(optimizedbydate);
