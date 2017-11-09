@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+#border1{
+	border-collapse: collapse;
+	border: 2px solid;
+	border-color: black;
+}
+#backgrounds{
+	background-color: Yellow;
+
+}
+td{
+	border: 1px solid;
+}
