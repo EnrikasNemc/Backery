@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 body{
 	font-family: 'Source Sans Pro', sans-serif;
+	text-align: center;
 }
 #border1{
 	border-collapse: collapse;
