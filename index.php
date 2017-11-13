@@ -6,12 +6,12 @@
 </head>
 <body>
 
-<table id="border1">
+<table class ="border1 table">
 	<thead id="backgrounds">
 		<tr>
-			<td rowspan="2">Kepinys</td>
-			<td colspan="5">2017-11-09</td>
-			<td colspan="5">2017-11-10</td>
+			<th> rowspan="2">Kepinys</th>
+			<th colspan="5">2017-11-09</th>
+			<th colspan="5">2017-11-10</th>
 		</tr>
 		<tr>
 			<td>VL</td><!--Vakarykštis likutis -->
@@ -95,10 +95,8 @@
 		</tr>
 	</tbody>
 </table>
-
+<?php 
+	@include_once("app/app.php");
+  ?>
 </body>
-
-<script type="text/javascript">
-
-</script>
 </html>

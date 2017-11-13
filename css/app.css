@@ -3,15 +3,18 @@ body{
 	font-family: 'Source Sans Pro', sans-serif;
 	text-align: center;
 }
-#border1{
+.border1{
 	border-collapse: collapse;
 	border: 2px solid;
 	border-color: black;
 }
-#backgrounds{
+.backgrounds{
 	background-color: Yellow;
 
 }
 td{
 	border: 1px solid;
+}
+.table{
+	display: none;
 }
