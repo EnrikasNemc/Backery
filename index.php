@@ -7,9 +7,9 @@
 <body>
 
 <table class ="border1 table">
-	<thead id="backgrounds">
-		<tr>
-			<th> rowspan="2">Kepinys</th>
+	<thead class ="backgrounds border1">
+		<tr class = "border1">
+			<th rowspan= "2">Kepinys</th>
 			<th colspan="5">2017-11-09</th>
 			<th colspan="5">2017-11-10</th>
 		</tr>

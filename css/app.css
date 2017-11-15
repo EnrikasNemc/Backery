@@ -12,9 +12,9 @@ body{
 	background-color: Yellow;
 
 }
-td{
+th, td{
 	border: 1px solid;
 }
 .table{
-	display: none;
+	display:none;
 }
