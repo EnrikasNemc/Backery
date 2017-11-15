@@ -1,29 +1,32 @@
 <?php
 
-$days = $keys = $names = $amounts = '';
+	$days = $keys = '';
+	$rows = [];
 
-			foreach ($data as $key => $value) {
-				
-					$days.="<th colspan=\"5\">$key</th>";
-					$keys.="<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>";
-			};	
+	foreach ($data as $key => $value) {
+					
+		$days.="<th colspan=\"5\">$key</th>";
+		$keys.="<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>";
+		
 
-			foreach ($value as $name => $data) {
+	foreach ($value as $name => $data) {
 
-					foreach ($data as $amount) {
-						
-					$amounts .="<td>$amount</td>";
-				};
-				$names.= "<tr><td>$name</td><td>$amounts</td></tr>";
+		if(!isset($rows[$name]))
+		{
+			$rows[$name] = "<td>$name</td>";
+		}
 
-				//echo "<tr>";
+		foreach ($data as $amount) {
 
-				
-				//echo "</tr>";
-			};
-			?>
-<table class="border1 backgrounds">
-	<thead>
+			$rows[$name] .= "<td>$amount</td>";
+							
+		}
+					
+	}
+};
+?>
+<table class="border1">
+	<thead class="backgrounds">
 		<tr>
 			<th rowspan="2">Kepinys</th>
 			<?php echo $days;
@@ -34,13 +37,13 @@ $days = $keys = $names = $amounts = '';
 		</tr>
 
 	</thead>
-	<body>
-		<?php 
-			echo $names; 
-			//echo $amounts;
+	<tbody>
+		<?php
+			foreach ($rows as $row) {
+				echo '<tr>'. $row . '</tr>';
+			}
 		?>
-			
-	</body>
+	</tbody>
 
 </table>
 
