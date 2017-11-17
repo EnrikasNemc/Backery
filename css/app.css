@@ -1,20 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 body{
 	font-family: 'Source Sans Pro', sans-serif;
-	text-align: center;
 }
 .border1{
 	border-collapse: collapse;
 	border: 2px solid;
 	border-color: black;
+	text-align: center;
 }
 .backgrounds{
 	background-color: Yellow;
+	text-align: center;
 
 }
 th, td{
 	border: 1px solid;
+	text-align: center;
 }
 .table{
 	display:none;
+	text-align: center;
+}
+.new{
+	margin-bottom: 20px;
+	padding: left;
 }
