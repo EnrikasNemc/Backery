@@ -6,7 +6,7 @@
 </head>
 <body>
 	<form method="POST" action="create.php">
-		<div>Data: </div> <input type="date" name ="data"></br>
+		<div>Data: </div> <input type="date" name ="date"></br>
 		<div>Prekė: </div>
 		<select name="product">
 			<option value="1">Pyragas</option>
