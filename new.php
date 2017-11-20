@@ -9,11 +9,11 @@
 		<div>Data: </div> <input type="date" name ="date"></br>
 		<div>Prekė: </div>
 		<select name="product">
-			<option value="1">Pyragas</option>
-			<option value="2">Bandelė</option>
-			<option value="3">Bulkutė</option>
-			<option value="4">Sausainis</option>
-			<option value="5">Tortas</option>
+			<option value="p-1">Pyragas</option>
+			<option value="p-2">Bandelė</option>
+			<option value="p-3">Bulkutė</option>
+			<option value="p-4">Sausainis</option>
+			<option value="p-5">Tortas</option>
 		</select>
 		<div>Vakarikštis likutis: </div> <input type="number" name ="vl"></br>
 		<div>Pagaminta: </div><input type="number" name ="pg"></br>

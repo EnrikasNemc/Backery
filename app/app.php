@@ -1,8 +1,8 @@
 <?php
 
 
-$data = @include_once("model/backery-data.php");
+$data = json_decode(file_get_contents("app/data/bakery-data.json"), true);
 
-//var_dump($data);
+
 
 @include_once('view/table.php');
