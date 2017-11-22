@@ -1,15 +1,14 @@
 <?php
 $new_data = $_POST;
-
 //TODO:
 //Check if all parameters are provided
-
+/*
 function checkIfSet(&$existing_data, $new_data){
-	if (isset($new_data["vl"])==true) {
-		if (isset($new_data["pg"])==true) {
-			if (isset($new_data["pr"])==true) {
-				if (isset($new_data["sg"])==true) {
-					if (isset($new_data["gl"])==true) {
+	if (isset($new_data["vl"])>=0) {
+		if (isset($new_data["pg"])>=0) {
+			if (isset($new_data["pr"])>=0) {
+				if (isset($new_data["sg"])>=0) {
+					if (isset($new_data["gl"])>=0) {
 						updateData($existing_data, $new_data);
 
 					}
@@ -21,6 +20,22 @@ function checkIfSet(&$existing_data, $new_data){
 		echo "one or more is not set";
 	}
 }	
+*/
+$required_fields = ["date", "product", "vl","pg","pr","sg","gl",];
+
+$validData = true;
+
+foreach ($required_fields as $value) {
+
+		if(isset($new_data[$value])|| empty($new_data[$value]))
+		{
+			$validData = false;
+
+			echo "Nerastas parametras: $value <br>";
+		}
+}
+if(!$validData)
+	return;
 
 //reading data
 $existing_data = json_decode (file_get_contents("app/data/bakery-data.json"));

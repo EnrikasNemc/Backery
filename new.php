@@ -9,11 +9,16 @@
 		<div>Data: </div> <input type="date" name ="date"></br>
 		<div>Prekė: </div>
 		<select name="product">
-			<option value="p-1">Pyragas</option>
-			<option value="p-2">Bandelė</option>
-			<option value="p-3">Bulkutė</option>
-			<option value="p-4">Sausainis</option>
-			<option value="p-5">Tortas</option>
+			<?php 
+			$products = json_decode (file_get_contents("app/data/products.json"), true); 
+
+			foreach ($products as $key => $value) {
+				$_key = "<option value= \"$key\">$value</option>";
+
+				echo "$_key";
+			}
+
+			?>
 		</select>
 		<div>Vakarikštis likutis: </div> <input type="number" name ="vl"></br>
 		<div>Pagaminta: </div><input type="number" name ="pg"></br>
