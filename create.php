@@ -2,25 +2,7 @@
 $new_data = $_POST;
 //TODO:
 //Check if all parameters are provided
-/*
-function checkIfSet(&$existing_data, $new_data){
-	if (isset($new_data["vl"])>=0) {
-		if (isset($new_data["pg"])>=0) {
-			if (isset($new_data["pr"])>=0) {
-				if (isset($new_data["sg"])>=0) {
-					if (isset($new_data["gl"])>=0) {
-						updateData($existing_data, $new_data);
 
-					}
-				}
-			}
-		}
-	}
-	else{
-		echo "one or more is not set";
-	}
-}	
-*/
 $required_fields = ["date", "product", "vl","pg","pr","sg","gl",];
 
 $validData = true;
