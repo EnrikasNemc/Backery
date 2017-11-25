@@ -9,27 +9,26 @@ $validData = true;
 
 foreach ($required_fields as $value) {
 
-		if(isset($new_data[$value])|| empty($new_data[$value]))
+		if(!isset($new_data[$value]) || empty($new_data[$value]))
 		{
 			$validData = false;
 
 			echo "Nerastas parametras: $value <br>";
 		}
+		if(!$validData){
+			
+			return;
+		}
+		
 }
-if(!$validData)
-	return;
-
 //reading data
-$existing_data = json_decode (file_get_contents("app/data/bakery-data.json"));
-$existing_data = objectToArray($existing_data);
-
-checkIfSet($existing_data,$new_data);
-
-print_r(json_encode($existing_data));
+$existing_data = json_decode (file_get_contents("app/data/bakery-data.json"), true);
+// $existing_data = objectToArray($existing_data);
+updateData($existing_data, $new_data);
 
 file_put_contents ("app/data/bakery-data.json", json_encode($existing_data) );
 
-function objectToArray(stdClass $obj) : array
+/*function objectToArray(stdClass $obj) : array
 {	
 	$obj = (array) $obj;
 
@@ -42,6 +41,7 @@ function objectToArray(stdClass $obj) : array
 	}
 	return $obj;
 }
+*/
 
 
 
@@ -63,7 +63,7 @@ function updateData(&$existing_data, $new_data){
 	}
 }
 
-function createProduct($existing_data, $new_data){
+function createProduct(&$existing_data, $new_data){
 
 	$existing_data[$new_data['date']][$new_data['product']] = 
 	[
