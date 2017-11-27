@@ -10,21 +10,24 @@
 		<div>Prekė: </div>
 		<select name="product">
 			<?php 
-			$products = json_decode (file_get_contents("app/data/products.json"), true); 
 
-			foreach ($products as $key => $value) {
-				$_key = "<option value= \"$key\">$value</option>";
+			@include_once('app/database.php');
 
-				echo "$_key";
+			$query = "SELECT `id`,`name` FROM `bakery_products` WHERE `deleted_at` IS NULL ORDER BY `name` ASC";
+
+				$result = db_query($query);
+
+			foreach ($result as $value) {
+			echo"<option value=" .$value['id'].'">'.$value ['name'] . '</option>';
 			}
 
 			?>
 		</select>
-		<div>Vakarikštis likutis: </div> <input type="number" name ="vl"></br>
-		<div>Pagaminta: </div><input type="number" name ="pg"></br>
-		<div>Parduota: </div><input type="number" name ="pr"></br>
-		<div>Sugadinta: </div><input type="number" name ="sg"></br>
-		<div>Galutinis likutis: </div><input type="number" name ="gl"></br>
+		<div>Vakarikštis likutis: </div> <input type="number" name ="initial"></br>
+		<div>Pagaminta: </div><input type="number" name ="produced"></br>
+		<div>Parduota: </div><input type="number" name ="damaged"></br>
+		<div>Sugadinta: </div><input type="number" name ="sold"></br>
+		<div>Galutinis likutis: </div><input type="number" name ="closed"></br>
 
 		<input type="submit" value="Išsaugoti duomenys">
 
