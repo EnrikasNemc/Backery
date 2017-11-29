@@ -3,25 +3,34 @@ $new_data = $_POST;
 //TODO:
 //Check if all parameters are provided
 
-$required_fields = ["date", "product", "vl","pg","pr","sg","gl",];
+$required_fields = ["date", "product", "initial","produced","sold","damaged","closed",];
 
 $validData = true;
 
-foreach ($required_fields as $value) {
+foreach ($required_fields as $value) 
+{
 
-		if(!isset($new_data[$value]) || empty($new_data[$value]))
-		{
-			$validData = false;
-
-			echo "Nerastas parametras: $value <br>";
-		}
-		if(!$validData){
-			
-			return;
-		}
-		
+	if(!isset($new_data[$value]) || empty($new_data[$value]))
+	{
+		$validData = false;
+		echo "Nerastas parametras: $value <br>";
+	}
 }
-//reading data
+		
+if(!$validData)
+return;
+
+include_once('app/database.php');
+
+$query = db_insertQuery("bakery_products_history",$new_data, true);
+
+$result = db_query($query);
+
+print_r($result);
+
+
+
+/*//reading data
 $existing_data = json_decode (file_get_contents("app/data/bakery-data.json"), true);
 // $existing_data = objectToArray($existing_data);
 updateData($existing_data, $new_data);
@@ -44,7 +53,7 @@ file_put_contents ("app/data/bakery-data.json", json_encode($existing_data) );
 */
 
 
-
+/*
 function updateData(&$existing_data, $new_data){
 	if(isset($existing_data[$new_data['date']]))
 {
@@ -75,3 +84,4 @@ function createProduct(&$existing_data, $new_data){
 	];
 	return $existing_data;
 }
+*/
