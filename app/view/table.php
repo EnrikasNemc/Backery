@@ -1,15 +1,22 @@
 <?php
-	$products = json_decode (file_get_contents("app/data/products.json"), true); 
-
-ksort($data);
-	$days = $keys = '';
-	$rows = [];
 	
-	foreach ($data as $key => $value) {
-					
-		$days.="<th colspan=\"5\">$key</th>";
+ksort($data);
+	$days = [];
+	$rows = [];
+	$keys = '';
+
+	foreach ($productHistory as $value) {
+
+	if(!isset($days[$value['date']]))
+		{
+		$days[$value['date']] = $value["date"];
 		$keys.="<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>";
-	foreach ($products as $key => $name) {
+			
+		}
+		
+		
+		
+	/*foreach ($products as $key => $name) {
 
 		if(!isset($rows[$key]))
 		{
@@ -28,14 +35,19 @@ ksort($data);
 		{
 			$rows[$key] .="<td></td> <td></td> <td></td> <td></td> <td></td>";
 		}			
-	}
+	}*/
 }
 ?>
 <table class="border1">
 	<thead class="backgrounds">
 		<tr>
 			<th rowspan="2">Kepinys</th>
-			<?php echo $days;
+			<?php
+
+			foreach ($days as $date) {
+				echo '<th colspan = "5">'. $date . '</th>';
+			}
+
 			?>
 		</tr>
 		<tr>
