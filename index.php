@@ -3,6 +3,7 @@
 
 include_once('app\dto\bun.php');
 
+use app\dto\bun;
 
 $bun = new app\dto\bun();
 
