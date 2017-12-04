@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+
+
+include_once('app\dto\bun.php');
+
+
+$bun = new app\dto\bun();
+
+/*<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title>Backery</title>
@@ -10,4 +18,4 @@
 	@include_once("app/app.php");
   ?>
 </body>
-</html>
+</html> -->*/
