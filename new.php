@@ -18,7 +18,7 @@
 				$result = db_query($query);
 
 			foreach ($result as $value) {
-			echo"<option value=" .$value['id'].'">'.$value ['name'] . '</option>';
+			echo'<option value="' .$value['id'].'">'.$value ['name'] . '</option>';
 			}
 
 			?>

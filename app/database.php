@@ -56,6 +56,10 @@ $keys = rtrim($keys,", ");
 
 $values = rtrim($values,", ");
 
+print_r($keys);
+"</br>";
+print_r($values);
+
 $query = "INSERT INTO `$tableName` ($keys) VALUES ($values) ";
 
 return($query);

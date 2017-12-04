@@ -10,7 +10,7 @@ $validData = true;
 
 		if(!isset($new_data[$value]) || strlen($new_data[$value]) < 1 || ($new_data[$value] < 0 )) {
 			$validData = false;
-			Echo "Problema su \"$value\"Laukeliu </br></br>";
+			Echo "Problema su $value Laukeliu </br>";
 		}
 	}
 

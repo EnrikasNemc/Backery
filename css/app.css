@@ -14,7 +14,7 @@ body{
 
 }
 th, td{
-	border: 1px solid;
+	border: solid;
 	text-align: center;
 }
 .table{
