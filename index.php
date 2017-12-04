@@ -1,13 +1,14 @@
 <?php
-
-
 include_once('app\dto\bun.php');
 
 use app\dto\bun;
+use app\dto\Strawberry;
 
-$bun = new app\dto\bun();
 
-/*<!-- <!DOCTYPE html>
+$bun = new Strawberry();
+//$bun->
+
+/*<!-- <!DOCTYPE html
 <html>
 <head>
 	<title>Backery</title>
