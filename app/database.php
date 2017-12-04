@@ -1,68 +1,62 @@
 <?php
 
-function db_connect(){
+
+function db_connect () {
 
 $servername = 'localhost';
+
 $username = 'root';
+
 $password = '';
+
 $dbname = 'en_bakery';
 
-	$conn = mysqli_connect($servername, $username, $password, $dbname, 3307);
+$conn = mysqli_connect($servername, $username, $password, $dbname, 3307);
 
-	if (!$conn) {
-		die("could not connect");
-	}
+if (!$conn) {
 
-	$conn->set_charset('utf8mb4'); 
-	
-	return $conn;
+	die("Did not work");
+
 }
+$conn->set_charset("utf8mb4");
 
-function db_query(string $query){
+return $conn;
+}
+function db_query(string $query) {
 
 	$conn = db_connect();
 
 	$result = $conn->query ($query);
 
-	$conn->close();
+	if($result){
 
-	return $result;
-}
+		$conn->close();
 
-$query = "SELECT `id`,`name` FROM `bakery_products` ORDER BY `name` ASC";
+		return $result;
+	}
+		print_r($conn);
 
-$result = db_query($query);
+		$conn->close();
 
-foreach ($result as $key => $value) {
-	
-}
-
-function db_insertQuery(string $tableName, array $data, bool $uuid = false) : string
-{
+		die();	
+	}
+function db_insertQuery (string $tableName, array $data, bool $uuid = false) : string {
 	if($uuid)
 		$data['id'] = uniqid();
 
-	$keys  = $values = '';
+$keys = $values = '';
 
-	foreach ($data as $key => $value) {
-		$keys .= "`$key`, " ;
-		$values .= "$value, ";
-	}
-
-	$keys = rtrim($keys, ", ");
-	$values = rtrim($values, ", ");
-
-	print_r($values);
-
-	$query = "INSERT INTO `$tableName` ($keys) VALUES ($values)";
-
-return $query;
+foreach ($data as $key => $value) {
+	
+	$keys .="`$key`, ";
+	$values .="'$value', ";
 }
 
-/*
-$result = $conn->query('SHOW TABLES');
+$keys = rtrim($keys,", ");
 
+$values = rtrim($values,", ");
 
-print_r($result);
+$query = "INSERT INTO `$tableName` ($keys) VALUES ($values) ";
 
-mysqli_close($conn);*/
+return($query);
+}
