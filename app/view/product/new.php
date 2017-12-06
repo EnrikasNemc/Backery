@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body style="text-align: center">
-<form method="POST" action="create.php">
+<form method="POST" action="?view=product&action=create">
 
     <div>EAN:</div>
     <input type="number" name="ean"><br>
@@ -20,16 +20,13 @@
     <input type="text" name="Name"><br>
 
     <div>Svoris</div>
-    <input type="number" name="weight"><br>
+    <input type="number" step="0.001" name="weight"><br>
 
     <div>Savikaina:</div>
-    <input type="number" name="sold"><br>
-
-    <div>Savikaina:</div>
-    <input type="number" name="prime_cost"><br>
+    <input type="number" step="0.001" name="prime_cost"><br>
 
     <div>Pardavimo Kaina:</div>
-    <input type="number" name="sell_price"><br>
+    <input type="number" step="0.001" name="sell_price"><br>
 
     <input type="submit" value="Išsaugoti duomenys">
 
