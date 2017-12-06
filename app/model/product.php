@@ -4,7 +4,12 @@
 namespace app\model;
 
 
-class product extends CoreModel
-{
+use app\model\interfaces\Manageable;
 
+class product extends CoreModel implements Manageable
+{
+    public function create()
+    {
+
+    }
 }
