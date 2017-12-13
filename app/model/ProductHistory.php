@@ -3,12 +3,13 @@
 
 namespace app\model;
 
+
 use app\model\interfaces\Destroyable;
 use app\model\interfaces\Manageable;
 
-class Product extends CoreModel implements Manageable, Destroyable
+class ProductHistory  extends CoreModel implements Manageable, Destroyable
 {
-    protected $table = 'bakery_products';
+    protected $table = 'bakery_products_history';
 
     public function create(array $data)
     {
@@ -30,5 +31,4 @@ class Product extends CoreModel implements Manageable, Destroyable
     {
         // TODO: Implement destroy() method.
     }
-
 }

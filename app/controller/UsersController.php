@@ -1,33 +1,41 @@
 <?php
 
+
 namespace app\controller;
 
 
-use app\model\Product;
+use app\model\users;
 
-class ProductController
+class UsersController
 {
-    public function create()
+
+    public function __construct()
     {
-        $template = new TemplateEngineController('new-product');
-        $template->echoOutput();
 
     }
 
-    public function store ()
+    public function create()
     {
-         $model = new Product();
-         $model->create($_POST);
+        $template = new TemplateEngineController('users');
+        $template->echoOutput();
+    }
 
-         //Redirecting to list
-         header('Location: ?view=product&action=list');
-         exit();
+    public function store()
+    {
+        $data = $_POST;
+        $data['password']= sha1($data['password'] . '512254');
+        $model = new users();
+        $model->create($_POST);
+
+        //Redirecting to list
+        header('Location: ?view=users&action=list');
+        exit();
     }
 
     public function list()
     {
-        $model = new Product();
-        $result = ($model->list ());
+        $model = new users();
+        $result = $model->list ();
         $header = '';
         $date = '';
 
@@ -57,5 +65,4 @@ class ProductController
         $template-> echoOutput();
 
     }
-
 }

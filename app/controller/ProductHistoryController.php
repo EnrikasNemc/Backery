@@ -4,30 +4,53 @@ namespace app\controller;
 
 
 use app\model\Product;
+use app\model\ProductHistory;
 
-class ProductController
+class ProductHistoryController
 {
+
+    public function __construct()
+    {
+
+    }
+
     public function create()
     {
-        $template = new TemplateEngineController('new-product');
+        $template = new TemplateEngineController('new-product-history');
+
+        $value = $this->getProductOptions();
+        $template->set('productOptions',$value);
         $template->echoOutput();
 
     }
 
-    public function store ()
-    {
-         $model = new Product();
-         $model->create($_POST);
 
-         //Redirecting to list
-         header('Location: ?view=product&action=list');
-         exit();
+    private function getProductOptions(): string
+    {
+        $result = (new Product())->list();
+        $options = '';
+
+        foreach ($result as $value) {
+            $options .= '<option value="' . $value['id'] . '">' . $value['name'] . '</option>';
+        }
+        return $options;
     }
+
+    public function store()
+    {
+        $model = new ProductHistory();
+        $model->create($_POST);
+
+        //Redirecting to list
+        header('Location: ?view=product-history&action=list');
+        exit();
+    }
+
 
     public function list()
     {
-        $model = new Product();
-        $result = ($model->list ());
+        $model = new ProductHistory();
+        $result = $model->list ();
         $header = '';
         $date = '';
 
@@ -57,5 +80,4 @@ class ProductController
         $template-> echoOutput();
 
     }
-
 }
