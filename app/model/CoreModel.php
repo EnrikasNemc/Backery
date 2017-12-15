@@ -75,6 +75,12 @@ class CoreModel
         return $this->db_query($query);
     }
 
+    public function find($id)
+    {
+        $query = "SELECT * FROM `" . $this->table . "` WHERE `deleted_at` IS NULL AND `id`= '".$id."'";
+        return $this->db_query($query);
+    }
+
     private function getProductOptions(): string
     {
         $result = (new Product())->list();
