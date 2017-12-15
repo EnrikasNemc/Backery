@@ -23,9 +23,10 @@ class UsersController
     public function store()
     {
         $data = $_POST;
-        $data['password']= sha1($data['password'] . '512254');
+        $data['password']= sha1($data['password'].SALT);
+
         $model = new users();
-        $model->create($_POST);
+        $model->create($data);
 
         //Redirecting to list
         header('Location: ?view=users&action=list');
@@ -64,5 +65,22 @@ class UsersController
         $template->set('date', $date);
         $template-> echoOutput();
 
+    }
+
+    public function login()
+    {
+        $template = new TemplateEngineController('login');
+        $template-> echoOutput();
+    }
+
+    public function auth()
+    {
+        $data = $_POST;
+        $data['password']=sha1($data['password'].SALT);
+
+        $model = new users();
+        $result = $model->auth($data);
+
+        print_r($result);
     }
 }

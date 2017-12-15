@@ -1,5 +1,5 @@
 <div style="text-align: center">
-    <form method="POST" action="?view=users&action=list">
+    <form method="POST" action="?view=users&action=create">
 
         <div> Name : </div>
         <input type="name" name="name"> <br>
