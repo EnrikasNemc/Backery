@@ -5,9 +5,14 @@
         <input type="email" name="email"> <br>
 
         <div> Password : </div>
-        <input type="password" name="password"> <br>
+        <input type="password" name="password"> <br><br>
 
-        <input type="submit" class="btn btn-group" value="Prisijungti">
+        <input type="submit" class="btn btn-danger" value="Prisijungti"><br><br>
 
+    </form>
+    <form method="POST" action="?view=users&action=new">
+        <div>
+            <input type="submit" class="btn btn-danger" value="Register"> <br>
+        </div>
     </form>
 </div>

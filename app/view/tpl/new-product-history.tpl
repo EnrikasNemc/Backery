@@ -1,5 +1,5 @@
 <div style="text-align: center">
-    <form method="POST" action="?view=product-history&action=create">
+    <form method="POST" action="?view=product-history&action=create" enctype="multipart/form-data">
 
         <div> Data : </div>
         <input type="date" name="date"> <br>
@@ -25,7 +25,12 @@
         <div> Galutinis likutis : </div>
         <input type="number" name="closed"> <br>
 
-        <input type="submit" value="Issaugoti duomenys">
+        <input type="submit" value="Issaugoti duomenys"><br><br>
 
+    </form>
+    <form method="POST" action="?view=product&action=new">
+        <div>
+            <input type="submit" class="btn btn-danger" value="New Product"> <br>
+        </div>
     </form>
 </div>

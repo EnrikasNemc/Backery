@@ -94,6 +94,13 @@ class UsersController
             $result = $model->find($_COOKIE['user']);
             if ($result->num_rows != 1)
                 die('You have\'t Logged in');
+            setcookie('user', $_COOKIE['user'], time() + 3600);
         }
+        else{
+            die("Please LOGIN");
+        }
+    }
+    public function createNewUser(){
+
     }
 }
