@@ -39,6 +39,9 @@ class Bakery
                     elseif ($action == 'list'){
                         (new ProductController())->list ();
                     }
+                    elseif ($action='edit'){
+                        (new ProductController())->edit();
+                    }
 
                     break;
 
@@ -69,9 +72,11 @@ class Bakery
         elseif ($method == 'POST') {
             switch ($view) {
                 case 'product':
-
+                    (new UsersController())->isLogged();
                     if ($action == 'create')
                         (new ProductController())->store();
+                    if ($action== 'update')
+                        (new ProductController())->update();
 
                     break;
 
@@ -84,6 +89,10 @@ class Bakery
 
                     break;
                 case 'users' :
+                    if ($action == 'new')
+                    {
+                        (new UsersController())-> create();
+                    }
 
                     if ($action == 'create'){
                         (new UsersController())->isLogged();

@@ -2,10 +2,10 @@
  <table class='table table-success'>
      <thead>
      <tr>
-            (@header)
+            [@header]
          </tr>
      </thead>
      <tbody>
-         (@date)
+         [@date]
       </tbody>
      </table>

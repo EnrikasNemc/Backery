@@ -17,7 +17,7 @@ class TemplateEngineController
         $this->viewName = "app/view/tpl/$viewName.tpl";
     }
 
-    public function set(string $key, string $value)
+    public function set(string $key, string $value = null)
     {
         $this->values[$key] = $value;
     }
@@ -35,7 +35,7 @@ class TemplateEngineController
         // replace all tags with values
 
         foreach ($this->values as $key => $value) {
-            $tagToReplace = "(@$key)";
+            $tagToReplace = "[@$key]";
             $output = str_replace($tagToReplace, $value, $output);
         }
 

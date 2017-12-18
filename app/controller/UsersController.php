@@ -46,7 +46,6 @@ class UsersController
                     $header .= '<th>' . $key . '</th>';
                 }
             }
-
             $date .= '<tr>';
 
             foreach ($item as $key => $value) {
